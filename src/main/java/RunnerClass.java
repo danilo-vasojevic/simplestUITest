@@ -28,7 +28,7 @@ public class RunnerClass  {
         // Test
         driver.get("http://www.google.com");
         WebElement element = driver.findElement(By.name("q"));
-        element.sendKeys("Cheese!");
+        element.sendKeys("Hello World!");
         element.submit();
         System.out.println("Page title is: " + driver.getTitle());
         (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
@@ -37,6 +37,6 @@ public class RunnerClass  {
             }
         });
         System.out.println("Page title is: " + driver.getTitle());
-        //driver.quit();
+        driver.quit();
     }
 }
