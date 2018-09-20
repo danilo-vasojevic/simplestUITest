@@ -10,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 
 public class RunnerClass  {
-    public static void main(String[] args) throws MalformedURLException {
+    public static void main(String[] args) throws MalformedURLException, InterruptedException {
 
         // Capabilities initialization
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -37,6 +37,7 @@ public class RunnerClass  {
             }
         });
         System.out.println("Page title is: " + driver.getTitle());
+        Thread.sleep(10000);
         driver.quit();
     }
 }
