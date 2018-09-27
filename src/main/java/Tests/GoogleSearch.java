@@ -5,11 +5,11 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class TestCase1 implements Runnable {
+public class GoogleSearch implements Runnable {
     private RemoteWebDriver driver;
     private Thread myLittleThread;
 
-    public TestCase1(RemoteWebDriver driver) {
+    public GoogleSearch(RemoteWebDriver driver) {
         this.driver = driver;
     }
 
