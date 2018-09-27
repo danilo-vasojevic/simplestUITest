@@ -50,16 +50,16 @@ First of all, let's check if our browsers are set up properly. Visit ```http://l
    "pending":0,
    "browsers":{  
       "chrome":{  
-         "68.0":{  },
-         "69.0":{  }
+         "68.0":{},
+         "69.0":{}
       },
       "firefox":{  
-         "61.0":{  },
-         "62.0":{  }
+         "61.0":{},
+         "62.0":{}
       },
       "opera":{  
-         "54.0":{  },
-         "55.0":{  }
+         "54.0":{},
+         "55.0":{}
       }
    }
 }
