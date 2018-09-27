@@ -1,28 +1,16 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.*;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
-import java.net.URI;
 
 public class RunnerClass  {
     public static void main(String[] args) throws MalformedURLException, InterruptedException {
-
-        // Capabilities initialization
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setBrowserName("chrome");
-        capabilities.setVersion("68.0");
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", false);
-
-        // WebDriver initialization
-        RemoteWebDriver driver = new RemoteWebDriver(
-                URI.create("http://localhost:4444/wd/hub").toURL(),
-                capabilities
+        RemoteWebDriver driver = WebDriverProvider.initRemoteDriver(
+                "http://localhost:4444/wd/hub",
+                Browsers.CHROME,
+                "68.0"
         );
 
         // Test
