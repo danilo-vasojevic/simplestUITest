@@ -50,36 +50,24 @@ First of all, let's check if our browsers are set up properly. Visit ```http://l
    "pending":0,
    "browsers":{  
       "chrome":{  
-         "68.0":{  
-
-         },
-         "69.0":{  
-
-         }
+         "68.0":{},
+         "69.0":{}
       },
       "firefox":{  
-         "61.0":{  
-
-         },
-         "62.0":{  
-
-         }
+         "61.0":{},
+         "62.0":{}
       },
       "opera":{  
-         "54.0":{  
-
-         },
-         "55.0":{  
-
-         }
+         "54.0":{},
+         "55.0":{}
       }
    }
 }
 ```
-As we can see, Selenoid provided us with 2 versions of Chrome, Firefox and Safari browsers. Cool. That means we're all set up to execute our test
+As we can see, Selenoid provided us with 2 versions of Chrome, Firefox and Safari browsers. Cool. That means we're all set up to execute our simple test.
 
 I assume you already cloned this repository on your local machine. Just go ahead and open in in you favorite IDE (I strongly suggest using IntelliJ IDEA) and simply run ```RunnerClass.main()``` method. Keep a close eye on the console window.
-Test should perform a google searche and print out window title in console. Of course, you shouldn't see any browser windows popup on your screen.
+Test should perform a google search using multiple browsers simultaneously, printing some information on standard output (in our case, console). Of course, you shouldn't see any browser windows popup on your screen.
 
 ## Introducing SelenoidUI
 As for Selenoid, there are multiple ways of intalling selenoid UI. One of the ways is, as it's distributed as a tiny Docker container, executing this command:
@@ -95,6 +83,6 @@ Alternatively, you could use ```cm``` to install SelenoidUI. Simply run ```./cm 
 
 Now, let's see the magic happen. Visit ```http://localhost:8080/#/```. Selenoid UI app is opened and you can see that there are no sessions running at this moment. Let's give it a session. Run ```RunnerClass.main()``` method once again. This time, observe what happens in Selenoid UI.
 
-Chrome session shoudld become visible. Another thing, our Selenoid created container in VNC mode, which is great. Now we can really see what goes on inside, as well as checkout the console next to our visual.
+Browser sessions shoudld become visible. Another thing, our Selenoid created container in VNC mode, which is great. Now we can really see what goes on inside, as well as checkout the console next to our visual.
 
 
