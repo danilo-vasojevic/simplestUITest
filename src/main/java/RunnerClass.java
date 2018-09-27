@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 
 public class RunnerClass  {
-    public static void main(String[] args) throws MalformedURLException, InterruptedException {
+    public static void main(String[] args) throws MalformedURLException {
         RemoteWebDriver driver = WebDriverProvider.initRemoteDriver(
                 "http://localhost:4444/wd/hub",
                 Browsers.CHROME,
@@ -16,16 +16,16 @@ public class RunnerClass  {
         // Test
         driver.get("http://www.google.com");
         WebElement element = driver.findElement(By.name("q"));
-        element.sendKeys("Hello World!");
+        element.sendKeys("Hello world!");
         element.submit();
-        System.out.println("Page title is: " + driver.getTitle());
+
         (new WebDriverWait(driver, 10)).until(new ExpectedCondition<Boolean>() {
             public Boolean apply(WebDriver d) {
-                return d.getTitle().toLowerCase().startsWith("cheese!");
+                return d.getTitle().toLowerCase().startsWith("hello world!");
             }
         });
+
         System.out.println("Page title is: " + driver.getTitle());
-        Thread.sleep(10000);
         driver.quit();
     }
 }

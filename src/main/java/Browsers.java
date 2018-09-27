@@ -1,6 +1,7 @@
 public enum Browsers {
     CHROME("chrome"),
-    FIREFOX("firefox");
+    FIREFOX("firefox"),
+    OPERA("opera");
 
     private String browserName;
 
