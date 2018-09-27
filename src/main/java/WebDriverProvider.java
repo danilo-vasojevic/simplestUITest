@@ -1,3 +1,4 @@
+import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -12,6 +13,11 @@ public class WebDriverProvider {
         capabilities.setVersion(version);
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", false);
+        if (browser == Browsers.OPERA) {
+            OperaOptions options = new OperaOptions();
+            options.setBinary("/usr/bin/opera");
+            capabilities.setCapability(OperaOptions.CAPABILITY, options);
+        }
 
         return new RemoteWebDriver(URI.create(url).toURL(), capabilities);
     }
