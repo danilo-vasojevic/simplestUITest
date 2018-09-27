@@ -67,7 +67,7 @@ First of all, let's check if our browsers are set up properly. Visit ```http://l
 As we can see, Selenoid provided us with 2 versions of Chrome, Firefox and Safari browsers. Cool. That means we're all set up to execute our simple test.
 
 I assume you already cloned this repository on your local machine. Just go ahead and open in in you favorite IDE (I strongly suggest using IntelliJ IDEA) and simply run ```RunnerClass.main()``` method. Keep a close eye on the console window.
-Test should perform a google searche and print out window title in console. Of course, you shouldn't see any browser windows popup on your screen.
+Test should perform a google search using multiple browsers simultaneously, printing some information on standard output (in our case, console). Of course, you shouldn't see any browser windows popup on your screen.
 
 ## Introducing SelenoidUI
 As for Selenoid, there are multiple ways of intalling selenoid UI. One of the ways is, as it's distributed as a tiny Docker container, executing this command:
