@@ -7,10 +7,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GoogleSearch implements Runnable {
     private RemoteWebDriver driver;
+    private String name;
     private Thread myLittleThread;
 
     public GoogleSearch(RemoteWebDriver driver) {
         this.driver = driver;
+        this.name = driver.getSessionId().toString();
     }
 
     public void run() {
@@ -36,13 +38,13 @@ public class GoogleSearch implements Runnable {
 
     public void start() {
         if (myLittleThread == null) {
-            myLittleThread = new Thread(this, "DVD");
+            myLittleThread = new Thread(this, name);
             myLittleThread.start();
         }
     }
 
     private void log(String s) {
-        System.out.println("[" + Thread.currentThread().getId() + "] " + s);
+        System.out.println("[" + Thread.currentThread().getName() + "] " + s);
     }
 
     private void simulateSlowExecution() {
