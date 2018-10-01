@@ -9,5 +9,8 @@
         <module name="simplestUITest" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="simplestUITest" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
